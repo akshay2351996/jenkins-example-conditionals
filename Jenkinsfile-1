@@ -1,5 +1,8 @@
 pipeline {
   agent any
+   when {
+        branch 'main'
+      }
   stages {
     stage('Example Build') {
       steps {
@@ -7,9 +10,9 @@ pipeline {
       }
     }
     stage('Example Deploy') {
-      when {
-        branch 'main'
-      }
+     // when {
+     //   branch 'main'
+     // }
       steps {
         sh 'echo Deploying'
       }
